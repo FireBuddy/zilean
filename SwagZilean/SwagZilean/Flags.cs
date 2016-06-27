@@ -46,7 +46,7 @@ namespace SwagZilean
                 if (pred.HitChance >= hitC)
                     Spells.Q.Cast(pred.CastPosition);
             }
-            if (useW && Spells.W.IsReady() && Spells.Q.IsOnCooldown && Spells.Q.Cooldown() > 5 )
+            if (useW && Spells.W.IsReady() && Spells.Q.IsOnCooldown && (Spells.Q.CooldownExpires - Game.Time) > 5)
             {
                 Spells.W.Cast();
                 if (Spells.Q.IsReady())
@@ -100,7 +100,7 @@ namespace SwagZilean
 
             if (Spells.W.IsReady() &&
                 useW &&
-                manaS <= _Player.ManaPercent && Spells.Q.IsOnCooldown && Spells.Q.Cooldown() > 5)
+                manaS <= _Player.ManaPercent && Spells.Q.IsOnCooldown && (Spells.Q.CooldownExpires - Game.Time) > 5)
             {
                 Spells.W.Cast();
             }
