@@ -118,7 +118,7 @@ namespace SwagZilean
                 Spells.E.IsReady() &&
                 Utils.isChecked(MenuX.Misc, "gapCloser"))
             {
-                Spells.E.Cast(sender);
+                Spells.E.Cast(_Player);
             }
         }
 
