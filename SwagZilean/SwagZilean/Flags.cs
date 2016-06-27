@@ -61,7 +61,7 @@ namespace SwagZilean
         public static void Harass()
         {
             var CurrentTarget = TargetSelector.GetTarget(Spells.Q.Range + 250, DamageType.Magical);
-            if (CurrentTarget != null && !CurrentTarget.IsDashing() && CurrentTarget.Type == GameObjectType.AIHeroClient && CurrentTarget.IsValidTarget(Spells.Q.Range + 150) &&Spells.Q.IsReady()&& Spells.W.IsReady() && CurrentTarget.IsEnemy)
+            if (CurrentTarget != null && CurrentTarget.IsValidTarget(Spells.Q.Range + 250) && Spells.Q.IsReady()&& Spells.W.IsReady())
             {
                 {
                  var Minions = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Both,CurrentTarget.ServerPosition, 250);
@@ -73,6 +73,7 @@ namespace SwagZilean
                     Core.DelayAction( () => Spells.Q.Cast(Minion.ServerPosition), 500);
                     Orbwalker.DisableMovement = false;
                  }
+                }
             }
 
             
