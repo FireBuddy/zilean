@@ -80,7 +80,7 @@ namespace SwagZilean
             if (sender == CurrentTarget && !sender.IsDashing() && sender.Type == GameObjectType.AIHeroClient && sender.IsValidTarget(Spells.Q.Range + 150) &&Spells.Q.IsReady()&& Spells.W.IsReady() && sender.IsEnemy)
             {
                 {
-                 var Minions = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Both,sender, 150);
+                 var Minions = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Both,sender.ServerPosition, 150);
                  
 
                 }
