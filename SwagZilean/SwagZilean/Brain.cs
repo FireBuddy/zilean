@@ -81,7 +81,11 @@ namespace SwagZilean
             {
                 {
                  var Minions = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Both,sender.ServerPosition, 150);
-                 
+                 if(Minion.IsValidTarget(Spells.Q.Range)
+                 {
+                    Spells.Q.Cast(Minion.ServerPosition);
+                    Core.DelayAction( () => Spells.Q.Cast(Minion.ServerPosition), 500);
+                 }
 
                 }
                 
