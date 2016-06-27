@@ -84,10 +84,10 @@ namespace SwagZilean
                  foreach (var Minion in Minions)
                  if(_Player.Distance(Minion.ServerPosition) <= 900)
                  {
-                    Orbwalker.DisableMovement = true
+                    Orbwalker.DisableMovement = true;
                     Spells.Q.Cast(Minion.ServerPosition);
                     Core.DelayAction( () => Spells.Q.Cast(Minion.ServerPosition), 500);
-                    Orbwalker.DisableMovement = false
+                    Orbwalker.DisableMovement = false;
 
                  }
 
