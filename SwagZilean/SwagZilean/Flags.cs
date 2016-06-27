@@ -100,7 +100,7 @@ namespace SwagZilean
 
             if (Spells.W.IsReady() &&
                 useW &&
-                manaS <= _Player.ManaPercent && Spells.Q.IsOnCooldown)
+                manaS <= _Player.ManaPercent && Spells.Q.IsOnCooldown && Q.Cooldown() > 5)
             {
                 Spells.W.Cast();
             }
