@@ -101,8 +101,7 @@ namespace SwagZilean
         {
             if (Spells.E.IsReady())
                 Spells.E.Cast(_Player);
-            if (Spells.W.IsReady())
-                Spells.W.Cast();
+
         }
 
         public static void LaneClear()
