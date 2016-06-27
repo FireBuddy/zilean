@@ -81,7 +81,7 @@ namespace SwagZilean
             {
                 {
                  var Minions = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Both,sender, 150);
-                 foreach (var Minion in Minions)
+                 
 
                 }
                 
