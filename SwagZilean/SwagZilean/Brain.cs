@@ -29,7 +29,7 @@ namespace SwagZilean
             Game.OnTick += OnTick;
             Drawing.OnDraw += Drawings.OnDraw;
             Obj_AI_Base.OnBasicAttack += Obj_AI_Base_OnBasicAttack;
-            Obj_AI_Base.OnProcessSpellCast += Obj_AI_Base_OnProcessSpellCast2;
+            
             _Player.SetSkin(_Player.ChampionName, Utils.getSliderValue(MenuX.Misc, "skinX"));
             MenuX.SkinSelect.OnValueChange +=
                 delegate(ValueBase<int> sender, ValueBase<int>.ValueChangeArgs aargs)
