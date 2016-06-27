@@ -72,7 +72,7 @@ namespace SwagZilean
                 
                 {
                  Spells.Q.Cast(CurrentTarget.ServerPosition + 20);
-                 Core.DelayAction( () => Spells.Q.Cast(_Player), 70);
+                 Core.DelayAction( () => Spells.Q.Cast(_Player), 90);
                 }
 
             }
