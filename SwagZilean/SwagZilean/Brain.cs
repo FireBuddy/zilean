@@ -11,6 +11,7 @@ namespace SwagZilean
 {
     internal class Brain
     {
+        public static AIHeroClient CurrentTarget;
         public static AIHeroClient _Player
         {
             get { return ObjectManager.Player; }
@@ -27,6 +28,8 @@ namespace SwagZilean
             Interrupter.OnInterruptableSpell += Interrupt;
             Game.OnTick += OnTick;
             Drawing.OnDraw += Drawings.OnDraw;
+            Obj_AI_Base.OnBasicAttack += Obj_AI_Base_OnBasicAttack;
+            Obj_AI_Base.OnProcessSpellCast += Obj_AI_Base_OnProcessSpellCast2;
             _Player.SetSkin(_Player.ChampionName, Utils.getSliderValue(MenuX.Misc, "skinX"));
             MenuX.SkinSelect.OnValueChange +=
                 delegate(ValueBase<int> sender, ValueBase<int>.ValueChangeArgs aargs)
@@ -54,6 +57,27 @@ namespace SwagZilean
                     break;
             }
         }
+        
+        private static void Obj_AI_Base_OnBasicAttack(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
+        {
+            var flags = Orbwalker.ActiveModesFlags;
+            if (sender == null || (!flags.HasFlag(Orbwalker.ActiveModes.Harass)))
+            {
+               return;
+            }
+            CurrentTarget = TargetSelector.GetTarget(Q.Range, DamageType.Magical);
+            if (sender == CurrentTarget && !sender.IsDashing() && sender.Type == GameObjectType.AIHeroClient && sender.IsValidTarget(Q.Range) && Q.IsReady() && sender.IsEnemy)
+            {
+                
+                
+                {
+                 Q.Cast(CurrentTarget.ServerPosition + 20);
+                }
+
+            }
+
+        }
+
 
         private static void BeforeAttack(AttackableUnit target, Orbwalker.PreAttackArgs args)
         {
