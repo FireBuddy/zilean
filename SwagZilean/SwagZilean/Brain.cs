@@ -65,13 +65,13 @@ namespace SwagZilean
             {
                return;
             }
-            CurrentTarget = TargetSelector.GetTarget(900, DamageType.Magical);
-            if (sender == CurrentTarget && !sender.IsDashing() && sender.Type == GameObjectType.AIHeroClient && sender.IsValidTarget(900) && Q.IsReady() && sender.IsEnemy)
+            CurrentTarget = TargetSelector.GetTarget(Spells.Q.Range, DamageType.Magical);
+            if (sender == CurrentTarget && !sender.IsDashing() && sender.Type == GameObjectType.AIHeroClient && sender.IsValidTarget(Spells.Q.Range) &&Spells.Q.IsReady() && sender.IsEnemy)
             {
                 
                 
                 {
-                 Q.Cast(CurrentTarget.ServerPosition + 20);
+                 Spells.Q.Cast(CurrentTarget.ServerPosition + 20);
                 }
 
             }
