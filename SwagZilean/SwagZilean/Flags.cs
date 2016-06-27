@@ -42,7 +42,7 @@ namespace SwagZilean
             }
             if (useQ && Spells.Q.IsReady())
             {
-                var pred = Spells.Q.GetPrediction(target);
+                var pred = Spells.Q2.GetPrediction(target);
                 if (pred.HitChance >= hitC)
                     Spells.Q.Cast(pred.CastPosition);
             }
@@ -51,7 +51,7 @@ namespace SwagZilean
                 Spells.W.Cast();
                 if (Spells.Q.IsReady())
                 {
-                    var pred = Spells.Q.GetPrediction(target);
+                    var pred = Spells.Q2.GetPrediction(target);
                     if (pred.HitChance >= hitC)
                         Spells.Q.Cast(pred.CastPosition);
                 }
@@ -74,7 +74,7 @@ namespace SwagZilean
                 useQ &&
                 manaS <= _Player.ManaPercent)
             {
-                var pred = Spells.Q.GetPrediction(target);
+                var pred = Spells.Q2.GetPrediction(target);
                 if (pred.HitChance >= Utils.getPredict(MenuX.Combo, "dPrediction"))
                 {
                     Spells.Q.Cast(pred.CastPosition);
