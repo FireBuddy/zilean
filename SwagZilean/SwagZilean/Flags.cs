@@ -60,11 +60,11 @@ namespace SwagZilean
 
         public static void Harass()
         {
-            var CurrentTarget = TargetSelector.GetTarget(Spells.Q.Range + 110, DamageType.Magical);
-            if (CurrentTarget != null && CurrentTarget.IsValidTarget(Spells.Q.Range + 110) && Spells.Q.IsReady()&& Spells.W.IsReady())
+            var CurrentTarget = TargetSelector.GetTarget(Spells.Q.Range + 80, DamageType.Magical);
+            if (CurrentTarget != null && CurrentTarget.IsValidTarget(Spells.Q.Range + 80) && Spells.Q.IsReady()&& Spells.W.IsReady())
             {
                 {
-                 var Minions = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Both,CurrentTarget.ServerPosition, 110);
+                 var Minions = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Both,CurrentTarget.ServerPosition, 80);
                  foreach (var Minion in Minions)
                  if(_Player.Distance(Minion.ServerPosition) <= 900)
                  {
