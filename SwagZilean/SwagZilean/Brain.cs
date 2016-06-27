@@ -84,7 +84,8 @@ namespace SwagZilean
                  foreach (var Minion in Minions)
                  if(_Player.Distance(Minion.ServerPosition) <= 900)
                  {
-
+                    Spells.Q.Cast(Minion.ServerPosition);
+                    Core.DelayAction( () => Spells.Q.Cast(Minion.ServerPosition), 500);
 
                  }
 
