@@ -15,7 +15,7 @@ namespace SwagZilean
         {
             Q = new Spell.Skillshot(SpellSlot.Q, 900, SkillShotType.Circular, (int) 0.30f, 2000, 210);
             Q.AllowedCollisionCount = int.MaxValue;
-            Q2 = new Spell.Skillshot(SpellSlot.Q, 900, SkillShotType.Circular, (int) 0.30f, 2200, 120);
+            Q2 = new Spell.Skillshot(SpellSlot.Q, 900, SkillShotType.Circular, (int) 0.30f, 2000, 120);
             Q.AllowedCollisionCount = int.MaxValue;
             W = new Spell.Active(SpellSlot.W);
             E = new Spell.Targeted(SpellSlot.E, 700);
