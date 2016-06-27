@@ -76,11 +76,11 @@ namespace SwagZilean
                 }
 
             }
-            CurrentTarget = TargetSelector.GetTarget(Spells.Q.Range + 150, DamageType.Magical);
+            CurrentTarget = TargetSelector.GetTarget(Spells.Q.Range + 250, DamageType.Magical);
             if (sender == CurrentTarget && !sender.IsDashing() && sender.Type == GameObjectType.AIHeroClient && sender.IsValidTarget(Spells.Q.Range + 150) &&Spells.Q.IsReady()&& Spells.W.IsReady() && sender.IsEnemy)
             {
                 {
-                 var Minions = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Both,sender.ServerPosition, 150);
+                 var Minions = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Both,sender.ServerPosition, 250);
                  foreach (var Minion in Minions)
                  if(_Player.Distance(Minion.ServerPosition) <= 900)
                  {
