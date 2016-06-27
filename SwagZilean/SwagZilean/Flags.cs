@@ -46,7 +46,7 @@ namespace SwagZilean
                 if (pred.HitChance >= hitC)
                     Spells.Q.Cast(pred.CastPosition);
             }
-            if (useW && Spells.W.IsReady() && Spells.Q.IsOnCooldown && Spells.Q.Cooldown > 5)
+            if (useW && Spells.W.IsReady() && Spells.Q.IsOnCooldown )
             {
                 Spells.W.Cast();
                 if (Spells.Q.IsReady())
